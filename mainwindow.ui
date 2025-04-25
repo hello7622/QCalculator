@@ -1,0 +1,1015 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindowClass</class>
+ <widget class="QMainWindow" name="MainWindowClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>787</width>
+    <height>636</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>计算器</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <property name="styleSheet">
+    <string notr="true">background-color: #F3F3F3; 
+</string>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout" stretch="2,6,1,12">
+    <item>
+     <widget class="QWidget" name="widget" native="true">
+      <property name="toolTip">
+       <string/>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="5,1">
+       <item>
+        <widget class="QLabel" name="label">
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+    font-size: 20px; /* 字体大小 */
+}</string>
+         </property>
+         <property name="text">
+          <string>≡</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="buttonEvalHistory">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>30</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="toolTip">
+          <string>历史记录</string>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+    border: none; /* 无边框 */
+    background: transparent; /* 背景透明 */
+    image: url(:/icons/history.svg); /* 设置图片 */
+}
+
+QPushButton:focus {
+    border: none; /* 聚焦时无边框 */
+}
+
+QPushButton:hover {
+    border: none; /* 悬停时无边框 */
+    background-color: #E0E0E0; /* 可选：悬停时背景变浅灰 */
+}
+
+QPushButton:pressed {
+    border: none; /* 按下时无边框 */
+    background-color: #A9A9A9; /* 可选：按下时背景变深灰 */
+}
+</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QWidget" name="widget_2" native="true">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_2" stretch="1,3">
+       <item>
+        <widget class="QLineEdit" name="lineExpression">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+         <property name="toolTip">
+          <string/>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLineEdit {
+    border: none; 
+    background-color: transparent; 
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+         </property>
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="lineDisplay">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>26</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLineEdit {
+    border: none; 
+    background-color: transparent; 
+   padding: 0 10px;
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+         </property>
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QPushButton" name="buttonMC">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="toolTip">
+         <string>（Ctrl+C）清空内存记录</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    border: none;
+    background-color: transparent;
+}
+
+QPushButton:hover {
+    background-color: #E0E0E0; 
+}
+
+QPushButton:pressed {
+    background-color: #A9A9A9; 
+}</string>
+        </property>
+        <property name="text">
+         <string>MC</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="buttonMR">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="toolTip">
+         <string>（Ctrl+R）将当前内存记录显示在屏幕上</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    border: none;
+    background-color: transparent;
+}
+
+QPushButton:hover {
+    background-color: #E0E0E0; 
+}
+
+QPushButton:pressed {
+    background-color: #A9A9A9; 
+}</string>
+        </property>
+        <property name="text">
+         <string>MR</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="buttonMPlus">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="toolTip">
+         <string>（Ctrl+P）将当前内存值加上当前显示的表达式的值（若表达式错误则不作修改）</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    border: none;
+    background-color: transparent;
+}
+
+QPushButton:hover {
+    background-color: #E0E0E0; 
+}
+
+QPushButton:pressed {
+    background-color: #A9A9A9; 
+}</string>
+        </property>
+        <property name="text">
+         <string>M+</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="buttonMMinus">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="toolTip">
+         <string>（Ctrl+M）将当前内存值减去当前显示的表达式的值（若表达式错误则不作修改）</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    border: none;
+    background-color: transparent;
+}
+
+QPushButton:hover {
+    background-color: #E0E0E0; 
+}
+
+QPushButton:pressed {
+    background-color: #A9A9A9; 
+}</string>
+        </property>
+        <property name="text">
+         <string>M-</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="buttonMS">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="toolTip">
+         <string>（Ctrl+S）将当前显示的表达式值存储到内存中（若表达式错误则存储0）</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    border: none;
+    background-color: transparent;
+}
+
+QPushButton:hover {
+    background-color: #E0E0E0; 
+}
+
+QPushButton:pressed {
+    background-color: #A9A9A9; 
+}</string>
+        </property>
+        <property name="text">
+         <string>MS</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="buttonMHistory">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="toolTip">
+         <string>显示内存记录</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    border: none;
+    background-color: transparent;
+}
+
+QPushButton:hover {
+    background-color: #E0E0E0; 
+}
+
+QPushButton:pressed {
+    background-color: #A9A9A9; 
+}</string>
+        </property>
+        <property name="text">
+         <string>Mv</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QGridLayout" name="gridLayout" rowstretch="1,1,1,1,1,1" columnstretch="1,1,1,1">
+      <item row="1" column="3">
+       <widget class="QPushButton" name="buttonSignDiv">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="toolTip">
+         <string>除：添加一个/</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    background-color: white; /* 按钮背景颜色 */
+    border: 1px solid #D3D3D3; /* 灰色边框 */
+    border-radius: 5px; /* 圆角效果（可选） */
+}
+
+QPushButton:pressed {
+    background-color: #E0E0E0; /* 按下时的背景颜色 */
+}</string>
+        </property>
+        <property name="text">
+         <string>÷</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QPushButton" name="buttonNum7">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="toolTip">
+         <string>添加一个7</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    background-color: white; /* 按钮背景颜色 */
+    border: 1px solid #D3D3D3; /* 灰色边框 */
+    border-radius: 5px; /* 圆角效果（可选） */
+}
+
+QPushButton:pressed {
+    background-color: #E0E0E0; /* 按下时的背景颜色 */
+}</string>
+        </property>
+        <property name="text">
+         <string>7</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <widget class="QPushButton" name="buttonClearAll">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="toolTip">
+         <string>清空当前显示</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    background-color: white; /* 按钮背景颜色 */
+    border: 1px solid #D3D3D3; /* 灰色边框 */
+    border-radius: 5px; /* 圆角效果（可选） */
+}
+
+QPushButton:pressed {
+    background-color: #E0E0E0; /* 按下时的背景颜色 */
+}</string>
+        </property>
+        <property name="text">
+         <string>C</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QPushButton" name="buttonSquare">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="toolTip">
+         <string>乘方：添加^2</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    background-color: white; /* 按钮背景颜色 */
+    border: 1px solid #D3D3D3; /* 灰色边框 */
+    border-radius: 5px; /* 圆角效果（可选） */
+}
+
+QPushButton:pressed {
+    background-color: #E0E0E0; /* 按下时的背景颜色 */
+}
+</string>
+        </property>
+        <property name="text">
+         <string>x²</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <widget class="QPushButton" name="buttonSqrt">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="toolTip">
+         <string>开方：添加^0.5</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    background-color: white; /* 按钮背景颜色 */
+    border: 1px solid #D3D3D3; /* 灰色边框 */
+    border-radius: 5px; /* 圆角效果（可选） */
+}
+
+QPushButton:pressed {
+    background-color: #E0E0E0; /* 按下时的背景颜色 */
+}</string>
+        </property>
+        <property name="text">
+         <string>√x</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="3">
+       <widget class="QPushButton" name="buttonSignAdd">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="toolTip">
+         <string>添加一个+</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    background-color: white; /* 按钮背景颜色 */
+    border: 1px solid #D3D3D3; /* 灰色边框 */
+    border-radius: 5px; /* 圆角效果（可选） */
+}
+
+QPushButton:pressed {
+    background-color: #E0E0E0; /* 按下时的背景颜色 */
+}</string>
+        </property>
+        <property name="text">
+         <string>+</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QPushButton" name="buttonReciprocal">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="toolTip">
+         <string>倒数；添加^-1</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    background-color: white; /* 按钮背景颜色 */
+    border: 1px solid #D3D3D3; /* 灰色边框 */
+    border-radius: 5px; /* 圆角效果（可选） */
+}
+
+QPushButton:pressed {
+    background-color: #E0E0E0; /* 按下时的背景颜色 */
+}</string>
+        </property>
+        <property name="text">
+         <string>1/x</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QPushButton" name="buttonNum5">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="toolTip">
+         <string>添加一个5</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    background-color: white; /* 按钮背景颜色 */
+    border: 1px solid #D3D3D3; /* 灰色边框 */
+    border-radius: 5px; /* 圆角效果（可选） */
+}
+
+QPushButton:pressed {
+    background-color: #E0E0E0; /* 按下时的背景颜色 */
+}</string>
+        </property>
+        <property name="text">
+         <string>5</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="2">
+       <widget class="QPushButton" name="buttonSignDot">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="toolTip">
+         <string>小数点：添加一个.</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    background-color: white; /* 按钮背景颜色 */
+    border: 1px solid #D3D3D3; /* 灰色边框 */
+    border-radius: 5px; /* 圆角效果（可选） */
+}
+
+QPushButton:pressed {
+    background-color: #E0E0E0; /* 按下时的背景颜色 */
+}</string>
+        </property>
+        <property name="text">
+         <string>.</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QPushButton" name="buttonNum4">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="toolTip">
+         <string>添加一个4</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    background-color: white; /* 按钮背景颜色 */
+    border: 1px solid #D3D3D3; /* 灰色边框 */
+    border-radius: 5px; /* 圆角效果（可选） */
+}
+
+QPushButton:pressed {
+    background-color: #E0E0E0; /* 按下时的背景颜色 */
+}</string>
+        </property>
+        <property name="text">
+         <string>4</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="0">
+       <widget class="QPushButton" name="buttonSwitchSign">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="toolTip">
+         <string>正负转换（Tab）：将当前表达式最后一项（如果是数）变为相反数</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    background-color: white; /* 按钮背景颜色 */
+    border: 1px solid #D3D3D3; /* 灰色边框 */
+    border-radius: 5px; /* 圆角效果（可选） */
+}
+
+QPushButton:pressed {
+    background-color: #E0E0E0; /* 按下时的背景颜色 */
+}</string>
+        </property>
+        <property name="text">
+         <string>+/-</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QPushButton" name="buttonClearEnd">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="toolTip">
+         <string>清除当前表达式的最后一项</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    background-color: white; /* 按钮背景颜色 */
+    border: 1px solid #D3D3D3; /* 灰色边框 */
+    border-radius: 5px; /* 圆角效果（可选） */
+}
+
+QPushButton:pressed {
+    background-color: #E0E0E0; /* 按下时的背景颜色 */
+}</string>
+        </property>
+        <property name="text">
+         <string>CE</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="1">
+       <widget class="QPushButton" name="buttonNum0">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    background-color: white; /* 按钮背景颜色 */
+    border: 1px solid #D3D3D3; /* 灰色边框 */
+    border-radius: 5px; /* 圆角效果（可选） */
+}
+
+QPushButton:pressed {
+    background-color: #E0E0E0; /* 按下时的背景颜色 */
+}</string>
+        </property>
+        <property name="text">
+         <string>0</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="3">
+       <widget class="QPushButton" name="buttonSignSub">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="toolTip">
+         <string>减：添加一个-</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    background-color: white; /* 按钮背景颜色 */
+    border: 1px solid #D3D3D3; /* 灰色边框 */
+    border-radius: 5px; /* 圆角效果（可选） */
+}
+
+QPushButton:pressed {
+    background-color: #E0E0E0; /* 按下时的背景颜色 */
+}</string>
+        </property>
+        <property name="text">
+         <string>-</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="2">
+       <widget class="QPushButton" name="buttonNum3">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="toolTip">
+         <string>添加一个3</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    background-color: white; /* 按钮背景颜色 */
+    border: 1px solid #D3D3D3; /* 灰色边框 */
+    border-radius: 5px; /* 圆角效果（可选） */
+}
+
+QPushButton:pressed {
+    background-color: #E0E0E0; /* 按下时的背景颜色 */
+}</string>
+        </property>
+        <property name="text">
+         <string>3</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="3">
+       <widget class="QPushButton" name="buttonBackspace">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="toolTip">
+         <string>退格：删除当前显示表达式的最后一个字符</string>
+        </property>
+        <property name="whatsThis">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    background-color: white; /* 按钮背景颜色 */
+    border: 1px solid #D3D3D3; /* 灰色边框 */
+    border-radius: 5px; /* 圆角效果（可选） */
+}
+
+QPushButton:pressed {
+    background-color: #E0E0E0; /* 按下时的背景颜色 */
+}</string>
+        </property>
+        <property name="text">
+         <string>⌫</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0">
+       <widget class="QPushButton" name="buttonNum1">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="toolTip">
+         <string>添加一个1</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    background-color: white; /* 按钮背景颜色 */
+    border: 1px solid #D3D3D3; /* 灰色边框 */
+    border-radius: 5px; /* 圆角效果（可选） */
+}
+
+QPushButton:pressed {
+    background-color: #E0E0E0; /* 按下时的背景颜色 */
+}</string>
+        </property>
+        <property name="text">
+         <string>1</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="2">
+       <widget class="QPushButton" name="buttonNum9">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="toolTip">
+         <string>添加一个9</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    background-color: white; /* 按钮背景颜色 */
+    border: 1px solid #D3D3D3; /* 灰色边框 */
+    border-radius: 5px; /* 圆角效果（可选） */
+}
+
+QPushButton:pressed {
+    background-color: #E0E0E0; /* 按下时的背景颜色 */
+}</string>
+        </property>
+        <property name="text">
+         <string>9</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QPushButton" name="buttonSignMod">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>1</horstretch>
+          <verstretch>1</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="toolTip">
+         <string>求余：添加%</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    background-color: white; 
+    border: 1px solid #D3D3D3; 
+    border-radius: 5px; 
+}
+
+QPushButton:pressed {
+    background-color: #E0E0E0; 
+}</string>
+        </property>
+        <property name="text">
+         <string>%</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="2">
+       <widget class="QPushButton" name="buttonNum6">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="toolTip">
+         <string>添加一个6</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    background-color: white; /* 按钮背景颜色 */
+    border: 1px solid #D3D3D3; /* 灰色边框 */
+    border-radius: 5px; /* 圆角效果（可选） */
+}
+
+QPushButton:pressed {
+    background-color: #E0E0E0; /* 按下时的背景颜色 */
+}</string>
+        </property>
+        <property name="text">
+         <string>6</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="3">
+       <widget class="QPushButton" name="buttonSignMul">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="toolTip">
+         <string>乘：添加一个*</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    background-color: white; /* 按钮背景颜色 */
+    border: 1px solid #D3D3D3; /* 灰色边框 */
+    border-radius: 5px; /* 圆角效果（可选） */
+}
+
+QPushButton:pressed {
+    background-color: #E0E0E0; /* 按下时的背景颜色 */
+}</string>
+        </property>
+        <property name="text">
+         <string>×</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <widget class="QPushButton" name="buttonNum2">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="toolTip">
+         <string>添加一个2</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    background-color: white; /* 按钮背景颜色 */
+    border: 1px solid #D3D3D3; /* 灰色边框 */
+    border-radius: 5px; /* 圆角效果（可选） */
+}
+
+QPushButton:pressed {
+    background-color: #E0E0E0; /* 按下时的背景颜色 */
+}</string>
+        </property>
+        <property name="text">
+         <string>2</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="3">
+       <widget class="QPushButton" name="buttonEval">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="toolTip">
+         <string>计算当前表达式的值</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    background-color: #005A9E;/* 按钮背景颜色 */
+    border: 1px solid #D3D3D3; /* 灰色边框 */
+    border-radius: 5px; /* 圆角效果（可选） */
+}
+QPushButton:hover {
+    background-color: #0078D4; /* 浅蓝色 */
+}
+
+/* 按下时，稍微变暗 */
+QPushButton:pressed {
+    background-color: #004578; /* 深蓝色 */
+}
+
+</string>
+        </property>
+        <property name="text">
+         <string>=</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QPushButton" name="buttonNum8">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="toolTip">
+         <string>添加一个8</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    background-color: white; /* 按钮背景颜色 */
+    border: 1px solid #D3D3D3; /* 灰色边框 */
+    border-radius: 5px; /* 圆角效果（可选） */
+}
+
+QPushButton:pressed {
+    background-color: #E0E0E0; /* 按下时的背景颜色 */
+}</string>
+        </property>
+        <property name="text">
+         <string>8</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="mainwindow.qrc"/>
+ </resources>
+ <connections/>
+</ui>
