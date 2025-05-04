@@ -21,6 +21,7 @@
 ```bash
 .
 ├── README.md
+├── calculator.exe
 ├── historyexpressionitem.ui
 ├── historymemoryitem.ui
 ├── historywidget.ui
